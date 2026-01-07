@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+    --color-glass: rgba(255, 255, 255, 0.03);
+    --color-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+    body {
+        @apply bg-[#030712] text-slate-100 min-h-screen font-sans antialiased;
+        background: radial-gradient(circle at top right, #1e1b4b, #030712);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        user-select: none;
+    }
+}
+
+.glass-card {
+    @apply bg-glass border border-glass-border backdrop-blur-xl rounded-3xl;
+}
