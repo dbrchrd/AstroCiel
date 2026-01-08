@@ -20,9 +20,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package.json ./package.json
 
-RUN addgroup -g 1001 -S bun && \
-    adduser -S bun -u 1001 && \
-    chown -R bun:bun /app && \
+RUN chown -R bun:bun /app && \
     rm -rf /root/.bun/install/cache /tmp/*
 
 USER bun
