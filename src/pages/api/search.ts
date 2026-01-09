@@ -3,7 +3,7 @@ import type { APIRoute } from "astro";
 export const GET: APIRoute = async ({ url }) => {
   const q = url.searchParams.get("q");
 
-  const API_KEY = import.meta.env.OPENWEATHER_API_KEY;
+  const API_KEY = process.env.OPENWEATHER_API_KEY;
 
   console.log("Recherche pour:", q);
   console.log("Clé utilisée:", API_KEY ? "Détectée ✅" : "VIDE ❌");
